@@ -1,7 +1,6 @@
 var React = require("react");
 var ReactDom = require("react-dom");
-var List = require("./components/List.jsx");
 
+var Email = require("./components/Email.jsx");
 
-
-ReactDom.render(<List />,document.getElementById('ingredients'));
+ReactDom.render(<Email />,document.getElementById('email'));

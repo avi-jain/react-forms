@@ -4,7 +4,10 @@ var Name = React.createClass({
   render: function(){
     return(
         <div>
-        <input type='text'>
+                <div class="form-group">
+                <label for="Name">Name:</label>
+                    <input type='text' class='form-control' id = 'name' placeholder='Name'/>
+                </div>
         </div>
     );
   }
