@@ -20,9 +20,9 @@ var Email = React.createClass({
   render: function(){
     var formClass = this.state.valid ? "form-group":"form-group has-error"
     return(
-            <div class={formClass}>
+            <div className={formClass}>
                 <label for="emailID"> Email: </label> 
-                    <input type='email' class='form-control' id = 'emailID' placeholder='Email' onChange = {this.onChange} 
+                    <input type='email' className='form-control' id = 'emailID' placeholder='Email' onChange = {this.onChange} 
                         value = {this.state.value}/>
                 </div>
       );

@@ -19749,13 +19749,13 @@ var Email = React.createClass({
     var formClass = this.state.valid ? "form-group" : "form-group has-error";
     return React.createElement(
       "div",
-      { "class": formClass },
+      { className: formClass },
       React.createElement(
         "label",
         { "for": "emailID" },
         " Email: "
       ),
-      React.createElement("input", { type: "email", "class": "form-control", id: "emailID", placeholder: "Email", onChange: this.onChange,
+      React.createElement("input", { type: "email", className: "form-control", id: "emailID", placeholder: "Email", onChange: this.onChange,
         value: this.state.value })
     );
   }
