@@ -1,6 +1,6 @@
 var React = require("react");
 var ReactDom = require("react-dom");
 
-var Email = require("./components/Email.jsx");
+var LeadCapture = require("./components/LeadCapture.jsx");
 
-ReactDom.render(<Email />,document.getElementById('email'));
+ReactDom.render(<LeadCapture  />,document.getElementById('content'));

@@ -19764,11 +19764,79 @@ var Email = React.createClass({
 module.exports = Email;
 
 },{"email-validator":1,"react":167}],170:[function(require,module,exports){
+var React = require('react');
+var Name = require('./Name.jsx');
+var Email = require('./Email.jsx');
+
+var LeadCapture = React.createClass({
+    displayName: 'LeadCapture',
+
+
+    render: function () {
+        return React.createElement(
+            'div',
+            { className: 'col-sm-3' },
+            React.createElement(
+                'div',
+                { className: 'panel panel-default' },
+                React.createElement(
+                    'div',
+                    { className: 'panel-body' },
+                    React.createElement(Name, { nameType: 'First' }),
+                    React.createElement(Email, null),
+                    React.createElement(
+                        'button',
+                        { className: 'btn btn-primary', onClick: this.onSubmit },
+                        'Submit'
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = LeadCapture;
+
+},{"./Email.jsx":169,"./Name.jsx":171,"react":167}],171:[function(require,module,exports){
+var React = require('react');
+
+var Name = React.createClass({
+    displayName: "Name",
+
+    getInitialState: function () {
+        return { input: "" };
+    },
+    onChange: function (e) {
+        this.setState({ input: e.target.value });
+    },
+    render: function () {
+        return React.createElement(
+            "div",
+            null,
+            React.createElement(
+                "div",
+                { className: "form-group" },
+                React.createElement(
+                    "label",
+                    { "for": "Name" },
+                    this.props.nameType + ' Name'
+                ),
+                React.createElement("input", { type: "text", className: "form-control", id: "name",
+                    placeholder: this.props.nameType + ' Name',
+                    onChange: this.onChange, value: this.state.input })
+            )
+        );
+    }
+});
+
+module.exports = Name;
+
+},{"react":167}],172:[function(require,module,exports){
 var React = require("react");
 var ReactDom = require("react-dom");
 
-var Email = require("./components/Email.jsx");
+var LeadCapture = require("./components/LeadCapture.jsx");
 
-ReactDom.render(React.createElement(Email, null), document.getElementById('email'));
+ReactDom.render(React.createElement(LeadCapture, null), document.getElementById('content'));
 
-},{"./components/Email.jsx":169,"react":167,"react-dom":2}]},{},[170]);
+},{"./components/LeadCapture.jsx":170,"react":167,"react-dom":2}]},{},[172]);
